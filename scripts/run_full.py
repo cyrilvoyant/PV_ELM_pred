@@ -21,9 +21,9 @@ Usage:
     python run_full.py lp                 # only the ELM L_p variant (general norm, strict 2-pass)
     python run_full.py glm                # only the ELM GLM variant (Gamma+log link, 2-pass Fisher linearized)
     python run_full.py timegpt            # only TimeGPT (Nixtla foundation model, zero-shot, subsampled)
-    python run_full.py ols_nocyclic      # ablation: ELM OLS without the 4 cyclic features, FH=1
-    python run_full.py ridge_nocyclic    # ablation: ELM Ridge without the 4 cyclic features, FH=1
-    python run_full.py rr_nocyclic     # ablation: ELM Robust Risk without the 4 cyclic features, FH=1
+    python run_full.py ols_nocyclic      # ablation: ELM OLS without the 4 cyclic features
+    python run_full.py ridge_nocyclic    # ablation: ELM Ridge without the 4 cyclic features
+    python run_full.py rr_nocyclic     # ablation: ELM Robust Risk without the 4 cyclic features
 
 TimeGPT is an external/API model: it is NOT run by default (the no-argument run
 skips it), but stays launchable explicitly with `run_full.py timegpt`.

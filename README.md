@@ -13,16 +13,16 @@ and several ELM variants are compared across multiple forecast horizons.
 ```
 python_prediction/
 ├── data/
-│   ├── Palaiseau/
+│   ├── Palaiseau/                                  # Shipped in data.zip — public example dataset
 │   │   ├── PV_AC_20200801_20250706_Palaiseau.csv   # Raw data (AC power, 15-min steps)
 │   │   ├── data_30min.npy                          # Cache: series resampled to 30 min
 │   │   └── is_day_mask.npy                         # Cache: day/night mask (solar elevation > 0°)
-│   ├── cs/                                         # Oxelar + Signes datasets (company data — NOT included in this repo)
-│   ├── Solete/                                     # SOLETE dataset (DimRed_PAC_Solete.nc + 30-min cache + mask)
-│   ├── Alice/                                      # Alice Springs dataset (DimRed_PAC_Alice.nc + 30-min cache + mask)
-│   ├── GHI_Pal/                                    # Palaiseau GHI dataset (raw CSV + 30-min cache + mask)
-│   ├── GHI_Alice/                                  # Alice Springs GHI dataset (raw CSV + 30-min cache + mask)
-│   └── Xavier/                                     # Barani MeteoHelix weather data (raw CSV + meteo_* 10-min caches)
+│   ├── cs/                                         # Oxelar + Signes datasets — access on request, see "Data availability"
+│   ├── Solete/                                     # SOLETE dataset — access on request, see "Data availability"
+│   ├── Alice/                                      # Alice Springs dataset — access on request, see "Data availability"
+│   ├── GHI_Pal/                                    # Palaiseau GHI dataset — access on request, see "Data availability"
+│   ├── GHI_Alice/                                  # Alice Springs GHI dataset — access on request, see "Data availability"
+│   └── Xavier/                                     # Barani MeteoHelix weather data — access on request, see "Data availability"
 ├── requirements.txt                            # Python dependencies
 ├── scripts/
 │   ├── observations.ipynb         # Exploration notebook / figures
@@ -54,9 +54,9 @@ python_prediction/
 │   ├── dr_elm_lp.py               # ELM-Lp (general L^p norm, p in (1,2)), 2-pass, joint grid (λ, p)
 │   ├── dr_elm_glm.py              # ELM-GLM linearised Fisher (Gamma + log link), 2-pass, joint grid (λ, c)
 │   ├── timegpt.py                 # TimeGPT (Nixtla foundation model, zero-shot; needs NIXTLA_API_KEY)
-│   ├── dr_elm_znocyclic_ols.py    # Ablation: ELM OLS without the 4 cyclic features (FH=1)
-│   ├── dr_elm_znocyclic_ridge.py  # Ablation: ELM Ridge without the 4 cyclic features (FH=1)
-│   └── dr_elm_znocyclic_rr.py     # Ablation: ELM Robust Risk without the 4 cyclic features (FH=1)
+│   ├── dr_elm_znocyclic_ols.py    # Ablation: ELM OLS without the 4 cyclic features
+│   ├── dr_elm_znocyclic_ridge.py  # Ablation: ELM Ridge without the 4 cyclic features
+│   └── dr_elm_znocyclic_rr.py     # Ablation: ELM Robust Risk without the 4 cyclic features
 ├── results/                       # Result and prediction CSV files
 └── figures/                       # Plots (predictions vs ground truth, slides, etc.)
 ```
@@ -72,9 +72,33 @@ pip install -r requirements.txt
 Dependencies: `numpy`, `pandas`, `pvlib` (used in `utils.py` to compute solar
 elevation and generate the day/night mask).
 
+## Data availability
+
+Only the **Palaiseau** dataset is shipped as a public example in `data.zip`,
+so the full benchmark can be reproduced end-to-end
+(`python scripts/run_full.py`) with no extra step.
+
+The other datasets used in this benchmark are **not redistributed in this
+repository** and are governed by a Data Management Plan (DMP) hosted on
+[webservice-energy.org](https://www.webservice-energy.org/):
+
+- **SOLETE**, **Alice Springs**, **GHI_Alice**, **GHI_Pal**: partner /
+  third-party datasets with their own reuse conditions.
+- **Xavier** (Barani MeteoHelix weather stations): partner weather data.
+- **oxelar**, **signes**: proprietary company data.
+
+Access to any of these datasets must be **requested before use** — go
+through the DMP on webservice-energy.org or contact the authors (see
+`CITATION.cff`). Once access is granted, drop the raw file(s) under
+`data/<Site>/` following the paths declared in `scripts/dataset_config.py`;
+the pipeline (preprocessing, caching, `run_full.py`) is unchanged and works
+identically for restricted and public datasets.
+
 ## Data preparation
 
-The data is committed as `data.zip` at the repository root, unzip it (`unzip data.zip`) before running anything so the `data/` folder is available.
+The Palaiseau example is committed as `data.zip` at the repository root,
+unzip it (`unzip data.zip`) before running anything so the `data/` folder is
+available. The other datasets are not included — see "Data availability" above.
 
 First, run **`preprocessing.py`** once. It reads the raw CSV, resamples to
 30-minute steps, and writes `data/Palaiseau/data_30min.npy`. All scripts use this cache.
@@ -342,7 +366,7 @@ If you use this software, please cite this project as follows.
 
 ```bibtex
 @software{,
-    author  = {Martin Leiva, Xavier Silvani, Gilles Notton, Cyril Voyant},
+    author  = {Martin Leiva, Xavier Silvani, Gilles Notton, Cyril Voyant, Alan Julien},
     title   = {ELM benchmark for PV predictions},
     year    = {2026},
     version = {1.0.0},

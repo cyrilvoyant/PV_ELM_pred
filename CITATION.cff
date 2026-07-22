@@ -23,6 +23,11 @@ authors:
     affiliation: "Mines Paris – PSL, O.I.E. Laboratory, France"
     orcid: "https://orcid.org/0000-0003-0242-7377"
 
+  - given-names: "Alan"
+    family-names: "Julien"
+    affiliation: "Mines Paris – PSL, O.I.E. Laboratory, France"
+    orcid: "https://orcid.org/0009-0003-0247-0663"
+
 repository-code: "https://github.com/Martigasti/PV_ELM_pred"
 url: ""
 doi: "https://doi.org/10.5281/zenodo.21487267"
@@ -39,8 +44,10 @@ abstract: >
   Tikhonov, Box-Cox, MAE, Huber, Log-MSE, Elastic Net, Corr-ELM, M-estimator,
   Lp, GLM, L3), together with foundation-model (TimeGPT) and NeuralProphet
   references. Models are evaluated with skill scores against persistence (NICE)
-  on several open PV sites. Developed during an M1 research internship at
-  Università di Corsica Pasquale Paoli. Laboratory, France.
+  on several PV sites, one openly available as an example, others on request.
+  Developed during an M1 research internship at Università di Corsica Pasquale
+  Paoli, SPE Laboratory, France, under the supervision of Xavier Silvani and
+  Prof. Cyril Voyant.
 
 keywords:
   - ELM
