@@ -8,6 +8,28 @@ GHI series, Barani MeteoHelix weather stations, and any new site added via
 Persistence baselines, two variants of convex BLEND, a linear AR-OLS model,
 and several ELM variants are compared across multiple forecast horizons.
 
+## Recent updates
+
+**ELM target centering (July 2026).** The ELM output weights are now fitted on
+a center-scaled target: `z = (y - mu_y) / sd_y`, with `mu_y`, `sd_y` frozen on
+the training fold only (no cross-validation leakage), and the prediction mapped
+back as `y_pred = z_pred * sd_y + mu_y` before the optional non-negativity clip.
+Since the inputs were already standardized while the target was not, the L2
+penalty previously shrank the output weights carrying a nonzero target mean,
+biasing the ELM on variables far from zero (most visibly atmospheric pressure,
+mean ≈ 1013 hPa). Centering removes that bias and **adds no learned parameter**,
+so the parameter count `N_theta` is unchanged. The fix affects every ELM variant
+(`dr_elm_*.py`); AR-OLS, persistence and BLEND are unchanged.
+
+**Capacity sweep (July 2026).** A dedicated run varies the hidden-layer size
+`N_hidden` in {5, 10, 25, 50, 100, 250, 500, 1000}, over several random seeds,
+to trace forecast skill against model capacity. It writes
+`results/<site>/Results_capacity_{all,day}.csv` and the figures
+`figures/<site>/capacity_<site>.png` (NICE^Sigma versus log10(N_theta), with a
+dispersion band over seeds, AR-OLS and persistence as references). Horizons can
+be overridden without editing the shared list via the `FH_HOURS` env var
+(e.g. `FH_HOURS=0.5,1,3,6,10`); horizons shorter than half a step are rejected.
+
 ## Repository structure
 
 ```
