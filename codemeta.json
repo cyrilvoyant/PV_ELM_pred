@@ -1,0 +1,22 @@
+{
+  "@context": "https://w3id.org/codemeta/3.0",
+  "@type": "SoftwareSourceCode",
+  "name": "ELM benchmark for PV prediction",
+  "description": "A benchmark of simple statistical models for photovoltaic power forecasting (AC output, after the inverter) across horizons from 30 minutes to 10 hours ahead. Compares persistence baselines, convex BLEND combinations, a linear AR-OLS model, and a family of Extreme Learning Machine variants differing in loss function and regularization, together with foundation-model and NeuralProphet references. Models are evaluated with skill scores against persistence on several PV sites.",
+  "version": "1.0.0",
+  "dateModified": "2026-06-12",
+  "license": "https://spdx.org/licenses/MIT",
+  "codeRepository": "https://github.com/cyrilvoyant/PV_ELM_pred",
+  "identifier": "https://doi.org/10.5281/zenodo.21487267",
+  "programmingLanguage": "Python",
+  "developmentStatus": "active",
+  "applicationCategory": "Photovoltaic power forecasting",
+  "keywords": ["extreme learning machine", "benchmark", "photovoltaic", "solar forecasting", "persistence", "skill score", "renewable energy"],
+  "author": [
+    {"@type": "Person", "givenName": "Martin", "familyName": "Leiva", "affiliation": {"@type": "Organization", "name": "Universite Paris-Saclay, Orsay, France"}},
+    {"@type": "Person", "givenName": "Xavier", "familyName": "Silvani", "@id": "https://orcid.org/0000-0002-0387-1667", "affiliation": {"@type": "Organization", "name": "SPE Laboratory, University of Corsica, France"}},
+    {"@type": "Person", "givenName": "Gilles", "familyName": "Notton", "@id": "https://orcid.org/0000-0002-6267-9632", "affiliation": {"@type": "Organization", "name": "SPE Laboratory, University of Corsica, France"}},
+    {"@type": "Person", "givenName": "Cyril", "familyName": "Voyant", "@id": "https://orcid.org/0000-0003-0242-7377", "url": "https://person.cyrilvoyant.com", "affiliation": {"@type": "Organization", "name": "Mines Paris - PSL, Centre Observation, Impacts, Energie (O.I.E.), Sophia Antipolis, France"}},
+    {"@type": "Person", "givenName": "Alan", "familyName": "Julien", "@id": "https://orcid.org/0009-0003-0247-0663", "affiliation": {"@type": "Organization", "name": "Mines Paris - PSL, Centre Observation, Impacts, Energie (O.I.E.), Sophia Antipolis, France"}}
+  ]
+}
