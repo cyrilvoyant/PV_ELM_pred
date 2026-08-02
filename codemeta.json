@@ -11,12 +11,75 @@
   "programmingLanguage": "Python",
   "developmentStatus": "active",
   "applicationCategory": "Photovoltaic power forecasting",
-  "keywords": ["extreme learning machine", "benchmark", "photovoltaic", "solar forecasting", "persistence", "skill score", "renewable energy"],
+  "keywords": [
+    "extreme learning machine",
+    "benchmark",
+    "photovoltaic",
+    "solar forecasting",
+    "persistence",
+    "skill score",
+    "renewable energy"
+  ],
   "author": [
-    {"@type": "Person", "givenName": "Martin", "familyName": "Leiva", "affiliation": {"@type": "Organization", "name": "Universite Paris-Saclay, Orsay, France"}},
-    {"@type": "Person", "givenName": "Xavier", "familyName": "Silvani", "@id": "https://orcid.org/0000-0002-0387-1667", "affiliation": {"@type": "Organization", "name": "SPE Laboratory, University of Corsica, France"}},
-    {"@type": "Person", "givenName": "Gilles", "familyName": "Notton", "@id": "https://orcid.org/0000-0002-6267-9632", "affiliation": {"@type": "Organization", "name": "SPE Laboratory, University of Corsica, France"}},
-    {"@type": "Person", "givenName": "Cyril", "familyName": "Voyant", "@id": "https://orcid.org/0000-0003-0242-7377", "url": "https://person.cyrilvoyant.com", "affiliation": {"@type": "Organization", "name": "Mines Paris - PSL, Centre Observation, Impacts, Energie (O.I.E.), Sophia Antipolis, France"}},
-    {"@type": "Person", "givenName": "Alan", "familyName": "Julien", "@id": "https://orcid.org/0009-0003-0247-0663", "affiliation": {"@type": "Organization", "name": "Mines Paris - PSL, Centre Observation, Impacts, Energie (O.I.E.), Sophia Antipolis, France"}}
+    {
+      "@type": "Person",
+      "givenName": "Martin",
+      "familyName": "Leiva",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Universite Paris-Saclay, Orsay, France",
+        "@id": "https://ror.org/03xjwb503",
+        "identifier": "https://ror.org/03xjwb503"
+      }
+    },
+    {
+      "@type": "Person",
+      "givenName": "Xavier",
+      "familyName": "Silvani",
+      "@id": "https://orcid.org/0000-0002-0387-1667",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "SPE Laboratory, University of Corsica, France",
+        "@id": "https://ror.org/050ra0n32",
+        "identifier": "https://ror.org/050ra0n32"
+      }
+    },
+    {
+      "@type": "Person",
+      "givenName": "Gilles",
+      "familyName": "Notton",
+      "@id": "https://orcid.org/0000-0002-6267-9632",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "SPE Laboratory, University of Corsica, France",
+        "@id": "https://ror.org/050ra0n32",
+        "identifier": "https://ror.org/050ra0n32"
+      }
+    },
+    {
+      "@type": "Person",
+      "givenName": "Cyril",
+      "familyName": "Voyant",
+      "@id": "https://orcid.org/0000-0003-0242-7377",
+      "url": "https://person.cyrilvoyant.com",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Mines Paris - PSL, Centre Observation, Impacts, Energie (O.I.E.), Sophia Antipolis, France",
+        "@id": "https://ror.org/04y8cs423",
+        "identifier": "https://ror.org/04y8cs423"
+      }
+    },
+    {
+      "@type": "Person",
+      "givenName": "Alan",
+      "familyName": "Julien",
+      "@id": "https://orcid.org/0009-0003-0247-0663",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Mines Paris - PSL, Centre Observation, Impacts, Energie (O.I.E.), Sophia Antipolis, France",
+        "@id": "https://ror.org/04y8cs423",
+        "identifier": "https://ror.org/04y8cs423"
+      }
+    }
   ]
 }
