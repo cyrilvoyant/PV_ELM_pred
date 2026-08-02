@@ -1,5 +1,6 @@
 # PV Forecasting
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21487267.svg)](https://doi.org/10.5281/zenodo.21487267)
 Benchmark of photovoltaic power forecasting models (AC power output),
 originally built on 30-minute data from Palaiseau (August 2020 -- August 2022)
 and now supporting multiple datasets/sites (Oxelar, Signes, SOLETE, Alice Springs,
