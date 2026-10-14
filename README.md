@@ -1,6 +1,7 @@
 # PV Forecasting
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21487267.svg)](https://doi.org/10.5281/zenodo.21487267)
+[![SWH](https://archive.softwareheritage.org/badge/swh:1:dir:619bd581a7cd0bbbf7582cade01b6c90b19bdee4/)](https://archive.softwareheritage.org/swh:1:dir:619bd581a7cd0bbbf7582cade01b6c90b19bdee4;origin=https://github.com/cyrilvoyant/PV_ELM_pred;visit=swh:1:snp:0c822b266d8c15abc18a6b9f7c4e320ecbca8452;anchor=swh:1:rev:0ac8a901b53f9174b896b316cd693c1d3a233fb1;path=/)
 Benchmark of photovoltaic power forecasting models (AC power output),
 originally built on 30-minute data from Palaiseau (August 2020 -- August 2022)
 and now supporting multiple datasets/sites (Oxelar, Signes, SOLETE, Alice Springs,
