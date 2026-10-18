@@ -1,4 +1,4 @@
-cff-version: 1.0.0
+cff-version: 1.2.0
 title: "ELM benchmark for PV prediction"
 message: "If you use this software, please cite it as below."
 type: software
@@ -29,9 +29,9 @@ authors:
     affiliation: "Mines Paris – PSL, O.I.E. Laboratory, France"
     orcid: "https://orcid.org/0009-0003-0247-0663"
 
-repository-code: "https://github.com/Martigasti/PV_ELM_pred"
-url: ""
-doi: "https://doi.org/10.5281/zenodo.21487267"
+repository-code: "https://github.com/cyrilvoyant/PV_ELM_pred"
+url: "https://github.com/cyrilvoyant/PV_ELM_pred"
+doi: "10.5281/zenodo.21487267"
 version: "v1.0.0"
 date-released: "2026-06-12"
 license: "MIT"
