@@ -2,7 +2,7 @@
   "@context": "https://w3id.org/codemeta/3.0",
   "@type": "SoftwareSourceCode",
   "name": "ELM benchmark for PV prediction",
-  "description": "A benchmark of simple statistical models for photovoltaic power forecasting (AC output, after the inverter) across horizons from 30 minutes to 10 hours ahead. Compares persistence baselines, convex BLEND combinations, a linear AR-OLS model, and a family of Extreme Learning Machine variants differing in loss function and regularization, together with foundation-model and NeuralProphet references. Models are evaluated with skill scores against persistence on several PV sites.",
+  "description": "A benchmark of simple statistical models for photovoltaic power forecasting (AC output, after the inverter) across horizons from 30 minutes to 10 hours ahead. Compares persistence baselines, convex BLEND combinations, a linear AR-OLS model, and a family of Extreme Learning Machine variants differing in loss function and regularization, together with foundation-model and NeuralProphet references. Models are evaluated with NICE, the ratio of their error to that of simple persistence at the same horizon, on several PV sites.",
   "version": "1.0.0",
   "dateModified": "2026-06-12",
   "license": "https://spdx.org/licenses/MIT",
@@ -17,7 +17,7 @@
     "photovoltaic",
     "solar forecasting",
     "persistence",
-    "skill score",
+    "NICE metric",
     "renewable energy"
   ],
   "author": [
