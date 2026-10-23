@@ -363,20 +363,20 @@ of test steps. Denote $\bar{y} = \frac{1}{N}\sum_i y_i$.
 | nMBE | $\frac{1}{N\bar{y}}\sum_i (\hat{y}_i - y_i)$ | — | Normalised mean bias error. Positive = systematic over-estimation, negative = under-estimation. Ideally close to 0. |
 | nMAE | $\frac{1}{N\bar{y}}\sum_i \|\hat{y}_i - y_i\|$ | — | Normalised MAE. Less sensitive to outliers than RMSE. |
 | $R^2$ | $1 - \frac{\sum_i (\hat{y}_i - y_i)^2}{\sum_i (y_i - \bar{y})^2}$ | — | Explained variance. $R^2 = 1$: perfect forecast; $R^2 = 0$: equivalent to predicting $\bar{y}$; $R^2 < 0$: worse than the mean. |
-| $NICE^1$ | $L^1(\hat{y}) / L^1(\hat{y}_P)$ | — | Skill score based on MAE. $<1$: model beats simple persistence; $>1$: worse. |
-| $NICE^2$ | $L^2(\hat{y}) / L^2(\hat{y}_P)$ | — | Skill score based on RMSE. Same, more sensitive to large errors. |
-| $NICE^3$ | $L^3(\hat{y}) / L^3(\hat{y}_P)$ | — | Skill score based on the $L^3$ norm. Even more penalising for extreme errors. |
+| $NICE^1$ | $L^1(\hat{y}) / L^1(\hat{y}_P)$ | — | Normalized error ratio based on MAE. $<1$: model beats simple persistence; $>1$: worse. |
+| $NICE^2$ | $L^2(\hat{y}) / L^2(\hat{y}_P)$ | — | Normalized error ratio based on RMSE. Same, more sensitive to large errors. |
+| $NICE^3$ | $L^3(\hat{y}) / L^3(\hat{y}_P)$ | — | Normalized error ratio based on the $L^3$ norm. Even more penalising for extreme errors. |
 | $NICE_\Sigma$ | $(NICE^1 + NICE^2 + NICE^3) / 3$ | — | Average of the 3 NICE scores. Synthetic indicator of quality relative to persistence. |
 
 Where $L^k(\hat{y}) = \left(\frac{1}{N}\sum_i \|\hat{y}_i - y_i\|^k\right)^{1/k}$ and
 $\hat{y}_P$ is **simple persistence** ($\hat{y}_P(t+h) = y(t)$) recomputed on
-the same sub-population (all samples / daytime only).
+the same sub-population (all samples / daytime only). Construct persistence on the chronological series before applying the evaluation mask; filtering daytime samples first must not change the forecast horizon. NICE is an error ratio, not a skill-score transform: 0 denotes perfect prediction and 1 simple persistence. The paper interprets the 0–1 range for useful models; a worse-than-persistence ratio above 1 must be reported, not silently clipped.
 
 ### Practical reading guide
 
 - **To quantify absolute error**: look at `RMSE` (in W) or `nRMSE` (dimensionless, comparable across horizons).
 - **To detect systematic bias**: `nMBE`. A blend that consistently predicts too low will have a negative `nMBE`.
-- **To compare against persistence**: use the `NICE` scores. They are the only way to judge whether a model adds value over the trivial baseline.
+- **To compare against persistence**: use the `NICE` scores. They quantify error relative to simple persistence at the same forecast horizon; lower is better. This error comparison does not by itself establish operational or economic value.
   - $NICE^k < 1$: the model beats persistence on the order-$k$ error.
   - $NICE^k \approx 1$: no better than persistence.
   - $NICE^k > 1$: worse than persistence (to be avoided).

@@ -44,7 +44,8 @@ abstract: >
   (ELM) variants differing in their loss function and regularization (Ridge,
   Tikhonov, Box-Cox, MAE, Huber, Log-MSE, Elastic Net, Corr-ELM, M-estimator,
   Lp, GLM, L3), together with foundation-model (TimeGPT) and NeuralProphet
-  references. Models are evaluated with skill scores against persistence (NICE)
+  references. Models are evaluated with normalized error ratios relative to simple persistence
+  at the same forecast horizon (NICE)
   on several PV sites, one openly available as an example, others on request.
   Developed during an M1 research internship at Università di Corsica Pasquale
   Paoli, SPE Laboratory, France, under the supervision of Xavier Silvani and
