@@ -25,7 +25,7 @@ so the parameter count `N_theta` is unchanged. The fix affects every ELM variant
 
 **Capacity sweep (July 2026).** A dedicated run varies the hidden-layer size
 `N_hidden` in {5, 10, 25, 50, 100, 250, 500, 1000}, over several random seeds,
-to trace forecast skill against model capacity. It writes
+to trace the error relative to simple persistence (NICE, not a skill score) against model capacity. It writes
 `results/<site>/Results_capacity_{all,day}.csv` and the figures
 `figures/<site>/capacity_<site>.png` (NICE^Sigma versus log10(N_theta), with a
 dispersion band over seeds, AR-OLS and persistence as references). Horizons can
