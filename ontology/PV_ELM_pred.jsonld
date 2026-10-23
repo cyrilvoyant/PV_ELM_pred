@@ -1,0 +1,77 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "wsem": "https://w3id.org/websemantic/ns#"
+  },
+  "@type": "SoftwareSourceCode",
+  "@id": "https://doi.org/10.5281/zenodo.21487267",
+  "name": "PV_ELM_pred: benchmark of persistence, BLEND, autoregression and ELM variants for PV forecasting (Python)",
+  "description": "Puts persistence, BLEND, a linear autoregression (AR-OLS) and 14 extreme learning machine variants through the same chronological splits, inputs and metrics.",
+  "codeRepository": "https://github.com/cyrilvoyant/PV_ELM_pred",
+  "license": "MIT",
+  "programmingLanguage": "Python",
+  "keywords": [
+    "PV forecasting",
+    "extreme learning machine",
+    "frugal AI",
+    "benchmark",
+    "persistence"
+  ],
+  "dateModified": "2026-10-23",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Martin Leiva"
+    },
+    {
+      "@type": "Person",
+      "name": "Xavier Silvani",
+      "@id": "https://orcid.org/0000-0002-0387-1667"
+    },
+    {
+      "@type": "Person",
+      "name": "Gilles Notton",
+      "@id": "https://orcid.org/0000-0002-6267-9632"
+    },
+    {
+      "@type": "Person",
+      "name": "Cyril Voyant",
+      "@id": "https://orcid.org/0000-0003-0242-7377"
+    },
+    {
+      "@type": "Person",
+      "name": "Alan Julien",
+      "@id": "https://orcid.org/0009-0003-0247-0663"
+    }
+  ],
+  "wsem:declaresParameter": [
+    {
+      "@type": "PropertyValueSpecification",
+      "name": "DATASET",
+      "description": "Palaiseau, oxelar, signes, solete, alice, ghi_palaiseau, ghi_alice, meteo_*",
+      "valueRequired": true
+    },
+    {
+      "@type": "PropertyValueSpecification",
+      "name": "FH_HOURS",
+      "description": "forecast horizons; shorter than half a step is rejected",
+      "valueRequired": false,
+      "unitText": "h",
+      "unitCode": "http://qudt.org/vocab/unit/HR"
+    }
+  ],
+  "wsem:declaresOutput": [
+    {
+      "@type": "PropertyValueSpecification",
+      "name": "results/<site>/*.csv",
+      "description": "nRMSE, NICE scores, daytime-only and all-hours",
+      "valueRequired": true
+    },
+    {
+      "@type": "PropertyValueSpecification",
+      "name": "figures/<site>/capacity_<site>.png",
+      "description": "capacity sweep",
+      "valueRequired": true
+    }
+  ]
+}
