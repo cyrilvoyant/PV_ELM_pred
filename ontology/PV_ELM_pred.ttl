@@ -1,52 +1,92 @@
-@prefix wsem: <https://w3id.org/websemantic/ns#> .
+# PV_ELM_pred: WebSemantic, QUDT and schema.org description (generated 2026-10-23; documentation only).
+# The JSON-LD file in this folder is the same graph.
+@prefix : <https://cyrilvoyant.github.io/ontology/PV_ELM_pred#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qk: <http://qudt.org/vocab/quantitykind/> .
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix unit: <http://qudt.org/vocab/unit/> .
-@prefix qk: <http://qudt.org/vocab/quantitykind/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix : <https://cyrilvoyant.github.io/ontology/PV_ELM_pred#> .
+@prefix wsem: <https://w3id.org/websemantic/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-# Instances of the WebSemantic core vocabulary for PV_ELM_pred (generated 2026-10-23; documentation only).
-
-:software a wsem:Software, schema:SoftwareSourceCode ;
-    schema:name "PV_ELM_pred: benchmark of persistence, BLEND, autoregression and ELM variants for PV forecasting (Python)" ;
+:software a schema:SoftwareSourceCode,
+        wsem:Software ;
+    dcterms:modified "2026-10-23" ;
+    owl:sameAs <https://doi.org/10.5281/zenodo.21487267> ;
+    schema:author [ a schema:Person ;
+            schema:name "Martin Leiva" ],
+        <https://orcid.org/0000-0002-0387-1667>,
+        <https://orcid.org/0000-0002-6267-9632>,
+        <https://orcid.org/0000-0003-0242-7377>,
+        <https://orcid.org/0009-0003-0247-0663> ;
     schema:codeRepository <https://github.com/cyrilvoyant/PV_ELM_pred> ;
-    wsem:conceptDOI "https://doi.org/10.5281/zenodo.21487267" ;
-    schema:identifier <https://doi.org/10.5281/zenodo.21487267> ;
-    schema:license "MIT" ;
-    schema:programmingLanguage "Python" ;
+    schema:dateModified "2026-10-23"^^xsd:date ;
     schema:description "Puts persistence, BLEND, a linear autoregression (AR-OLS) and 14 extreme learning machine variants through the same chronological splits, inputs and metrics." ;
-    schema:author [ a schema:Person ; schema:name "Martin Leiva" ] ;
-    schema:author <https://orcid.org/0000-0002-0387-1667> ;
-    schema:author <https://orcid.org/0000-0002-6267-9632> ;
-    schema:author <https://orcid.org/0000-0003-0242-7377> ;
-    schema:author <https://orcid.org/0009-0003-0247-0663> ;
-    wsem:declaresParameter :in0 ;
-    wsem:declaresParameter :in1 ;
-    wsem:declaresOutput :out0 ;
-    wsem:declaresOutput :out1 ;
-    dcterms:modified "2026-10-23" .
+    schema:identifier <https://doi.org/10.5281/zenodo.21487267> ;
+    schema:keywords "PV forecasting",
+        "benchmark",
+        "extreme learning machine",
+        "frugal AI",
+        "persistence" ;
+    schema:license "MIT" ;
+    schema:name "PV_ELM_pred: benchmark of persistence, BLEND, autoregression and ELM variants for PV forecasting (Python)" ;
+    schema:programmingLanguage "Python" ;
+    wsem:conceptDOI "https://doi.org/10.5281/zenodo.21487267" ;
+    wsem:declaresOutput :out0,
+        :out1 ;
+    wsem:declaresParameter :in0,
+        :in1 .
 
-<https://orcid.org/0000-0002-0387-1667> a schema:Person ; schema:name "Xavier Silvani" .
-<https://orcid.org/0000-0002-6267-9632> a schema:Person ; schema:name "Gilles Notton" .
-<https://orcid.org/0000-0003-0242-7377> a schema:Person ; schema:name "Cyril Voyant" .
-<https://orcid.org/0009-0003-0247-0663> a schema:Person ; schema:name "Alan Julien" .
-:in0 a wsem:ParameterDefinition ;
+:in0 a schema:PropertyValueSpecification,
+        wsem:ParameterDefinition ;
+    skos:definition "Palaiseau, oxelar, signes, solete, alice, ghi_palaiseau, ghi_alice, meteo_*" ;
     skos:prefLabel "DATASET" ;
-    wsem:apiVariable "DATASET" ;
-    skos:definition "Palaiseau, oxelar, signes, solete, alice, ghi_palaiseau, ghi_alice, meteo_*" .
-:in1 a wsem:ParameterDefinition ;
-    skos:prefLabel "FH_HOURS" ;
-    wsem:apiVariable "FH_HOURS" ;
+    schema:description "Palaiseau, oxelar, signes, solete, alice, ghi_palaiseau, ghi_alice, meteo_*" ;
+    schema:name "DATASET" ;
+    schema:valueRequired true ;
+    wsem:apiVariable "DATASET" .
+
+:in1 a schema:PropertyValueSpecification,
+        wsem:ParameterDefinition ;
     skos:definition "forecast horizons; shorter than half a step is rejected" ;
+    skos:prefLabel "FH_HOURS" ;
+    schema:description "forecast horizons; shorter than half a step is rejected" ;
+    schema:name "FH_HOURS" ;
+    schema:unitCode unit:HR ;
+    schema:unitText "h" ;
+    schema:valueRequired false ;
+    wsem:apiVariable "FH_HOURS" ;
     wsem:canonicalUnit unit:HR ;
     wsem:quantityKind qk:Time .
-:out0 a wsem:OutputVariable ;
+
+:out0 a schema:PropertyValueSpecification,
+        wsem:OutputVariable ;
+    skos:definition "nRMSE, NICE scores, daytime-only and all-hours" ;
     skos:prefLabel "results/<site>/*.csv" ;
-    wsem:apiVariable "results/<site>/*.csv" ;
-    skos:definition "nRMSE, NICE scores, daytime-only and all-hours" .
-:out1 a wsem:OutputVariable ;
+    schema:description "nRMSE, NICE scores, daytime-only and all-hours" ;
+    schema:name "results/<site>/*.csv" ;
+    schema:valueRequired true ;
+    wsem:apiVariable "results/<site>/*.csv" .
+
+:out1 a schema:PropertyValueSpecification,
+        wsem:OutputVariable ;
+    skos:definition "capacity sweep" ;
     skos:prefLabel "figures/<site>/capacity_<site>.png" ;
-    wsem:apiVariable "figures/<site>/capacity_<site>.png" ;
-    skos:definition "capacity sweep" .
+    schema:description "capacity sweep" ;
+    schema:name "figures/<site>/capacity_<site>.png" ;
+    schema:valueRequired true ;
+    wsem:apiVariable "figures/<site>/capacity_<site>.png" .
+
+<https://orcid.org/0000-0002-0387-1667> a schema:Person ;
+    schema:name "Xavier Silvani" .
+
+<https://orcid.org/0000-0002-6267-9632> a schema:Person ;
+    schema:name "Gilles Notton" .
+
+<https://orcid.org/0000-0003-0242-7377> a schema:Person ;
+    schema:name "Cyril Voyant" .
+
+<https://orcid.org/0009-0003-0247-0663> a schema:Person ;
+    schema:name "Alan Julien" .
+

@@ -1,77 +1,168 @@
 {
   "@context": {
+    "": "https://cyrilvoyant.github.io/ontology/PV_ELM_pred#",
     "@vocab": "https://schema.org/",
-    "wsem": "https://w3id.org/websemantic/ns#"
+    "dcterms": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "qk": "http://qudt.org/vocab/quantitykind/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "unit": "http://qudt.org/vocab/unit/",
+    "wsem": "https://w3id.org/websemantic/ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
   },
-  "@type": "SoftwareSourceCode",
-  "@id": "https://doi.org/10.5281/zenodo.21487267",
-  "name": "PV_ELM_pred: benchmark of persistence, BLEND, autoregression and ELM variants for PV forecasting (Python)",
-  "description": "Puts persistence, BLEND, a linear autoregression (AR-OLS) and 14 extreme learning machine variants through the same chronological splits, inputs and metrics.",
-  "codeRepository": "https://github.com/cyrilvoyant/PV_ELM_pred",
-  "license": "MIT",
-  "programmingLanguage": "Python",
-  "keywords": [
-    "PV forecasting",
-    "extreme learning machine",
-    "frugal AI",
-    "benchmark",
-    "persistence"
-  ],
-  "dateModified": "2026-10-23",
-  "author": [
+  "@graph": [
     {
+      "@id": "https://cyrilvoyant.github.io/ontology/PV_ELM_pred#in0",
+      "@type": [
+        "wsem:ParameterDefinition",
+        "PropertyValueSpecification"
+      ],
+      "description": "Palaiseau, oxelar, signes, solete, alice, ghi_palaiseau, ghi_alice, meteo_*",
+      "name": "DATASET",
+      "skos:definition": "Palaiseau, oxelar, signes, solete, alice, ghi_palaiseau, ghi_alice, meteo_*",
+      "skos:prefLabel": "DATASET",
+      "valueRequired": true,
+      "wsem:apiVariable": "DATASET"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-6267-9632",
+      "@type": "Person",
+      "name": "Gilles Notton"
+    },
+    {
+      "@id": "https://cyrilvoyant.github.io/ontology/PV_ELM_pred#out1",
+      "@type": [
+        "wsem:OutputVariable",
+        "PropertyValueSpecification"
+      ],
+      "description": "capacity sweep",
+      "name": "figures/<site>/capacity_<site>.png",
+      "skos:definition": "capacity sweep",
+      "skos:prefLabel": "figures/<site>/capacity_<site>.png",
+      "valueRequired": true,
+      "wsem:apiVariable": "figures/<site>/capacity_<site>.png"
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-0387-1667",
+      "@type": "Person",
+      "name": "Xavier Silvani"
+    },
+    {
+      "@id": "https://cyrilvoyant.github.io/ontology/PV_ELM_pred#software",
+      "@type": [
+        "wsem:Software",
+        "SoftwareSourceCode"
+      ],
+      "author": [
+        {
+          "@id": "_:N2f7e3221483248a0a5b75abc509351d9"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-0387-1667"
+        },
+        {
+          "@id": "https://orcid.org/0000-0002-6267-9632"
+        },
+        {
+          "@id": "https://orcid.org/0000-0003-0242-7377"
+        },
+        {
+          "@id": "https://orcid.org/0009-0003-0247-0663"
+        }
+      ],
+      "codeRepository": {
+        "@id": "https://github.com/cyrilvoyant/PV_ELM_pred"
+      },
+      "dateModified": {
+        "@type": "xsd:date",
+        "@value": "2026-10-23"
+      },
+      "dcterms:modified": "2026-10-23",
+      "description": "Puts persistence, BLEND, a linear autoregression (AR-OLS) and 14 extreme learning machine variants through the same chronological splits, inputs and metrics.",
+      "identifier": {
+        "@id": "https://doi.org/10.5281/zenodo.21487267"
+      },
+      "keywords": [
+        "PV forecasting",
+        "extreme learning machine",
+        "frugal AI",
+        "benchmark",
+        "persistence"
+      ],
+      "license": "MIT",
+      "name": "PV_ELM_pred: benchmark of persistence, BLEND, autoregression and ELM variants for PV forecasting (Python)",
+      "owl:sameAs": {
+        "@id": "https://doi.org/10.5281/zenodo.21487267"
+      },
+      "programmingLanguage": "Python",
+      "wsem:conceptDOI": "https://doi.org/10.5281/zenodo.21487267",
+      "wsem:declaresOutput": [
+        {
+          "@id": "https://cyrilvoyant.github.io/ontology/PV_ELM_pred#out0"
+        },
+        {
+          "@id": "https://cyrilvoyant.github.io/ontology/PV_ELM_pred#out1"
+        }
+      ],
+      "wsem:declaresParameter": [
+        {
+          "@id": "https://cyrilvoyant.github.io/ontology/PV_ELM_pred#in0"
+        },
+        {
+          "@id": "https://cyrilvoyant.github.io/ontology/PV_ELM_pred#in1"
+        }
+      ]
+    },
+    {
+      "@id": "_:N2f7e3221483248a0a5b75abc509351d9",
       "@type": "Person",
       "name": "Martin Leiva"
     },
     {
+      "@id": "https://orcid.org/0000-0003-0242-7377",
       "@type": "Person",
-      "name": "Xavier Silvani",
-      "@id": "https://orcid.org/0000-0002-0387-1667"
+      "name": "Cyril Voyant"
     },
     {
-      "@type": "Person",
-      "name": "Gilles Notton",
-      "@id": "https://orcid.org/0000-0002-6267-9632"
-    },
-    {
-      "@type": "Person",
-      "name": "Cyril Voyant",
-      "@id": "https://orcid.org/0000-0003-0242-7377"
-    },
-    {
-      "@type": "Person",
-      "name": "Alan Julien",
-      "@id": "https://orcid.org/0009-0003-0247-0663"
-    }
-  ],
-  "wsem:declaresParameter": [
-    {
-      "@type": "PropertyValueSpecification",
-      "name": "DATASET",
-      "description": "Palaiseau, oxelar, signes, solete, alice, ghi_palaiseau, ghi_alice, meteo_*",
-      "valueRequired": true
-    },
-    {
-      "@type": "PropertyValueSpecification",
-      "name": "FH_HOURS",
-      "description": "forecast horizons; shorter than half a step is rejected",
-      "valueRequired": false,
-      "unitText": "h",
-      "unitCode": "http://qudt.org/vocab/unit/HR"
-    }
-  ],
-  "wsem:declaresOutput": [
-    {
-      "@type": "PropertyValueSpecification",
-      "name": "results/<site>/*.csv",
+      "@id": "https://cyrilvoyant.github.io/ontology/PV_ELM_pred#out0",
+      "@type": [
+        "wsem:OutputVariable",
+        "PropertyValueSpecification"
+      ],
       "description": "nRMSE, NICE scores, daytime-only and all-hours",
-      "valueRequired": true
+      "name": "results/<site>/*.csv",
+      "skos:definition": "nRMSE, NICE scores, daytime-only and all-hours",
+      "skos:prefLabel": "results/<site>/*.csv",
+      "valueRequired": true,
+      "wsem:apiVariable": "results/<site>/*.csv"
     },
     {
-      "@type": "PropertyValueSpecification",
-      "name": "figures/<site>/capacity_<site>.png",
-      "description": "capacity sweep",
-      "valueRequired": true
+      "@id": "https://cyrilvoyant.github.io/ontology/PV_ELM_pred#in1",
+      "@type": [
+        "wsem:ParameterDefinition",
+        "PropertyValueSpecification"
+      ],
+      "description": "forecast horizons; shorter than half a step is rejected",
+      "name": "FH_HOURS",
+      "skos:definition": "forecast horizons; shorter than half a step is rejected",
+      "skos:prefLabel": "FH_HOURS",
+      "unitCode": {
+        "@id": "unit:HR"
+      },
+      "unitText": "h",
+      "valueRequired": false,
+      "wsem:apiVariable": "FH_HOURS",
+      "wsem:canonicalUnit": {
+        "@id": "unit:HR"
+      },
+      "wsem:quantityKind": {
+        "@id": "qk:Time"
+      }
+    },
+    {
+      "@id": "https://orcid.org/0009-0003-0247-0663",
+      "@type": "Person",
+      "name": "Alan Julien"
     }
   ]
 }
